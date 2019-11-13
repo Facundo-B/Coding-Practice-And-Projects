@@ -5,7 +5,7 @@ def count_entries(df, col_name='colname'):
     
     # Raise a ValueError if col_name is NOT in DataFrame
     if col_name not in df.columns:
-        raise ValueError 'The DataFrame does not have a ' + col_name + ' column.'
+        raise ValueError ('The DataFrame does not have a ' + col_name + ' column.')
 
     # Initialize an empty dictionary: cols_count
     cols_count = {}
