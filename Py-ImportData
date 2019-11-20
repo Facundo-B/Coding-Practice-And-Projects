@@ -1,0 +1,11 @@
+#Text Files
+
+filename = 'textfile.txt'
+
+file = open(filename, mode = 'r') #Read, not write. Open a connection to the file
+
+text = file.read()
+
+...
+
+file.close()
