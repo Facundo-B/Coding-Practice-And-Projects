@@ -23,3 +23,9 @@ np.genfromtext(filename, delimiter, skiprows, usecols[...], dtpye, names=True/Fa
 np.recfromcsv() #default dtype is 'None', delimiter is ',' and names is 'True'
 
 #--------------------------------------------------------------------------------------------------------------------
+IMPORTING USING PANDAS
+
+pd.read_csv('file.csv')
+
+array = dataframe.values #turns dataframe into a numpy array
+
