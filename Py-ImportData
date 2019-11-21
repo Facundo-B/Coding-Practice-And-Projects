@@ -9,3 +9,17 @@ text = file.read()
 ...
 
 file.close()
+
+
+with open('textfile.txt') as file #context manager- file is now equal to open('textfile.txt')
+
+#--------------------------------------------------------------------------------------------------------------------
+IMPORTING USING NUMPY
+
+np.loadtext(filename, delimiter, skiprows, usecols[...], dtpye) #dtype ensures al data is imported as a certain type
+
+np.genfromtext(filename, delimiter, skiprows, usecols[...], dtpye, names=True/False) #names indicates if there's a header, dtype = none lets numpy figure out data type for each value
+
+np.recfromcsv() #default dtype is 'None', delimiter is ',' and names is 'True'
+
+#--------------------------------------------------------------------------------------------------------------------
