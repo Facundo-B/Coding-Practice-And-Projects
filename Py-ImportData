@@ -29,3 +29,14 @@ pd.read_csv('file.csv')
 
 array = dataframe.values #turns dataframe into a numpy array
 
+#--------------------------------------------------------------------------------------------------------------------
+
+PICKLED FILES
+
+Native to Python
+
+Pickled == Serialize == transform into a sequence of bytes (bytestream)
+
+#Open and load pickled file
+with open('data.pkl', 'rb') as file:
+    d = pickle.load(file)
