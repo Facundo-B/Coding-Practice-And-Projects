@@ -40,3 +40,20 @@ Pickled == Serialize == transform into a sequence of bytes (bytestream)
 #Open and load pickled file
 with open('data.pkl', 'rb') as file:
     d = pickle.load(file)
+
+#--------------------------------------------------------------------------------------------------------------------
+
+EXCEL FILES
+
+pd.ExcelFile(file)
+
+.parse(sheet_name or index, skiprows = [], names = [], usecols = []) #Loads Excel sheet as DataFrame. 
+
+#--------------------------------------------------------------------------------------------------------------------
+
+SAS/STATA FILES
+
+SAS: sas7bdat or sas7bcat
+
+STATA: .dta
+
