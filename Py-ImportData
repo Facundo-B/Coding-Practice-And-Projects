@@ -57,3 +57,7 @@ SAS: sas7bdat or sas7bcat
 
 STATA: .dta
 
+file.to_data_frame()
+
+pd.read_stata('file.dta')
+
