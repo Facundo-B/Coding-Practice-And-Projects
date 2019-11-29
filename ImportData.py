@@ -14,7 +14,7 @@ file.close()
 with open('textfile.txt') as file #context manager- file is now equal to open('textfile.txt')
 
 #--------------------------------------------------------------------------------------------------------------------
-IMPORTING USING NUMPY
+#IMPORTING USING NUMPY
 
 np.loadtext(filename, delimiter, skiprows, usecols[...], dtpye) #dtype ensures al data is imported as a certain type
 
@@ -23,7 +23,7 @@ np.genfromtext(filename, delimiter, skiprows, usecols[...], dtpye, names=True/Fa
 np.recfromcsv() #default dtype is 'None', delimiter is ',' and names is 'True'
 
 #--------------------------------------------------------------------------------------------------------------------
-IMPORTING USING PANDAS
+#IMPORTING USING PANDAS
 
 pd.read_csv('file.csv')
 
@@ -31,11 +31,11 @@ array = dataframe.values #turns dataframe into a numpy array
 
 #--------------------------------------------------------------------------------------------------------------------
 
-PICKLED FILES
+#PICKLED FILES
 
-Native to Python
+#Native to Python
 
-Pickled == Serialize == transform into a sequence of bytes (bytestream)
+#Pickled == Serialize == transform into a sequence of bytes (bytestream)
 
 #Open and load pickled file
 with open('data.pkl', 'rb') as file:
@@ -43,7 +43,7 @@ with open('data.pkl', 'rb') as file:
 
 #--------------------------------------------------------------------------------------------------------------------
 
-EXCEL FILES
+#EXCEL FILES
 
 pd.ExcelFile(file)
 
@@ -51,13 +51,23 @@ pd.ExcelFile(file)
 
 #--------------------------------------------------------------------------------------------------------------------
 
-SAS/STATA FILES
+#SAS/STATA FILES
 
-SAS: sas7bdat or sas7bcat
+#SAS: sas7bdat or sas7bcat
 
-STATA: .dta
+#STATA: .dta
 
 file.to_data_frame()
 
 pd.read_stata('file.dta')
+
+#--------------------------------------------------------------------------------------------------------------------
+
+#HDF5 (Hierarchical Data Format)
+
+#Standard for large numerical data
+
+import h5py
+
+h5py_data = h5py.File(h5py_file, 'r')
 
