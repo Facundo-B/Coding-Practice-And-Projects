@@ -71,3 +71,16 @@ import h5py
 
 h5py_data = h5py.File(h5py_file, 'r')
 
+#--------------------------------------------------------------------------------------------------------------------
+
+#MatLab
+
+#scipy.io.load/savemat() for reading and writing
+
+#A '.Mat' file is a collection of structures. It's imported a dict, where keys are variables and values are objects assigned to those variables.
+
+import scipy.io
+
+
+
+
