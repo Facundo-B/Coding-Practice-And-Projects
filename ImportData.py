@@ -81,6 +81,15 @@ h5py_data = h5py.File(h5py_file, 'r')
 
 import scipy.io
 
+#--------------------------------------------------------------------------------------------------------------------
 
+#Relational Databases
 
+#SQLAlchemy package
+
+#Creating a Database engine to communicate with the database
+
+from sqlalchemy import create_engine
+
+engine = create_engine('sqlite:///database.sqlite')
 
