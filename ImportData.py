@@ -93,3 +93,17 @@ from sqlalchemy import create_engine
 
 engine = create_engine('sqlite:///database.sqlite')
 
+with engine.connect() as con:
+    rs = con.execute("SELECT LastName, Title from Employee" )
+    df = pd.DataFrame(rs.fetchmany(3))
+    df.columns = rs.keys()
+
+#Querying with pandas
+
+pd.read_sql_query(query, engine) #saves in a DataFrame
+
+
+df = pd.read_sql_query('SELECT * FROM PlaylistTrack INNER JOIN Track on PlaylistTrack.TrackId = Track.TrackId WHERE Miliseconds < 25000',engine) #example with inner join
+
+
+
