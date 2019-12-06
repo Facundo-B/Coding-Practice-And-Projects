@@ -102,8 +102,45 @@ with engine.connect() as con:
 
 pd.read_sql_query(query, engine) #saves in a DataFrame
 
-
 df = pd.read_sql_query('SELECT * FROM PlaylistTrack INNER JOIN Track on PlaylistTrack.TrackId = Track.TrackId WHERE Miliseconds < 25000',engine) #example with inner join
 
+#--------------------------------------------------------------------------------------------------------------------
 
+#Importing from Web
+
+from urllib.request import urlretrieve
+
+urlretrieve(url, filename) #to save file locally. Performs GET Request.
+
+df = pd.read_csv(url, sep = ';') #import into DataFrame directly from web
+
+dict = pd.read_excel(url, sheet_name = None) #dict with sheets as keys and DataFrames as values
+
+#GET with urllib
+
+from urllib.request import urlopen, Request
+
+request = Request(url)
+
+response = urlopen(request)
+
+html = response.read()
+
+request.close()
+
+#GET using requests package
+
+r = requests.get(url) #single line and no need to close connection
+
+#using BeautifulSoup for parsing HTML
+
+from bs4 import BeautifulSoup
+
+soup = BeautifulSoup(html_doc)
+
+prety_soup = soup.prettify()
+
+a_tags = soup.find_all('tagname') #find all objects with 'tagname' tag
+
+element.get('attribute') 
 
