@@ -144,3 +144,19 @@ a_tags = soup.find_all('tagname') #find all objects with 'tagname' tag
 
 element.get('attribute') 
 
+#--------------------------------------------------------------------------------------------------------------------
+
+#API's and JSON's
+
+import json
+
+with open("a_movie.json") as json_file: #json's are imported as dicts
+    json_data = json.loads(json_file)
+
+r = requests.get(url)
+
+r.json() #creates a dict from a json file
+
+
+
+
