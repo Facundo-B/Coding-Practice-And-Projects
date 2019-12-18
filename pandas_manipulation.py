@@ -38,3 +38,46 @@ dataframe['column'].map(dictionary) #transform values according to a Python dict
 
 #apply and map are not efficient
 
+#Indexes
+
+#Indexes are inmutable (you can, however, update the entire )
+
+#Hierarchical indexing
+
+df.setindex[col1, col2]
+
+df.sort_index()
+
+#accessors (loc/iloc) now can take a tuple of indexes or a single index as parameters for slicing
+
+# Look up data for NY in month 1
+sales.loc[('NY', 1), :]
+
+# Look up data for CA and TX in month 2
+sales.loc[(['CA', 'TX'], 2), :]
+
+# Access the inner month index and look up data for all states in month 2: all_month2
+sales.loc[(slice(None), 2), :]
+
+#Pivoting
+
+dataframe.pivot(columns=, values=, index=) #if values is not specified, all remainig columns are usad as values. 'Columns' refers to column index.
+
+#Stacking/Unstacking
+
+#Stack: thiner and longer
+
+#Unstack: wider and shorter
+
+df.stack/unstack(level = lvl_int/lvl_label)
+
+df.swaplevels(lvl1, lvl2) #swap index levels. Might require sort_index
+
+#Pivoting tables
+
+df.pivot_table(columns=, values=, index=, aggfunc=) #when index/column pairs have non-unique values (default aggfunc is average)
+                                                    #"see all of your variables as a function of two other variables"
+                                                    # margins=True computes totals
+
+#Grouping data
+
