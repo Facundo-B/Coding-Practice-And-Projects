@@ -81,3 +81,10 @@ df.pivot_table(columns=, values=, index=, aggfunc=) #when index/column pairs hav
 
 #Grouping data
 
+df.groupby('column') #groups of rows, using distinct values from the 'column' column.
+                     #can also use Series, if they have same index as df.
+
+series.unique() #Returns categorical (unique) values. Can be obtained with the 'astype('type')' methods.
+
+
+
