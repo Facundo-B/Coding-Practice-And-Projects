@@ -86,5 +86,12 @@ df.groupby('column') #groups of rows, using distinct values from the 'column' co
 
 series.unique() #Returns categorical (unique) values. Can be obtained with the 'astype('type')' methods.
 
+df.agg([aggmethod1, aggmethod2]/ dict{column : method}) #agregates columns. Aggregation: Series -> Single value
 
+df[columns].transform(function)
+
+#you can apply a .transform() method after grouping to apply a function to groups of data independently.. Transformation: Series -> Conforming series.
+#Example: z-score. Difference from mean expressed in units of std. (zscore +- 3 means outlier)
+
+#Filtering
 
