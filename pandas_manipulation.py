@@ -93,5 +93,18 @@ df[columns].transform(function)
 #you can apply a .transform() method after grouping to apply a function to groups of data independently.. Transformation: Series -> Conforming series.
 #Example: z-score. Difference from mean expressed in units of std. (zscore +- 3 means outlier)
 
-#Filtering
+#MERGING
 
+df.copy() #creates copy of df
+
+df.reindex([new_index]) #creates a new dataframe with the same data, but using 'new_index' as index. If a label from the new_index is not present, it is created with NaN values.
+
+#Arithmetic
+
+df.divide(series, axis=)
+
+df.pct_change() #for each value: (current value - previous value) / previous value
+
+df.add(df, fill_value=0) # '+' operator yields NaN when indices are not present in all Dataframes.
+
+#Appending/Concatenating 
