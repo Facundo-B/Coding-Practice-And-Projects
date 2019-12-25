@@ -115,3 +115,18 @@ pd.concat([s1, s2, s3]) #can concatenate vertical or horizontally. Can use ignor
                         #keys=[] creates multi-index
                         #can specify join='inner'/'outer' (default)
 
+#Merging
+
+#Merging extends concat, making it possible to align rows using multiple columns.
+
+pd.merge(df1, df2, on=[column1, column2], suffixes=[suf1, suf2], left_on='df1column', right_on='df2column', how='')
+
+df1.join(df2) #left join (default) on index (default)
+
+pd.merge_ordered(df1, df2) #outer join by default.
+
+pd.merge_asof() #similar to a left-join except that we match on nearest key rather than equal keys. 
+                #only rows from the right DataFrame whose 'on' column values are less than the left value will be kept.
+  
+
+
