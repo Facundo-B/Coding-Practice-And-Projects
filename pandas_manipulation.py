@@ -108,3 +108,10 @@ df.pct_change() #for each value: (current value - previous value) / previous val
 df.add(df, fill_value=0) # '+' operator yields NaN when indices are not present in all Dataframes.
 
 #Appending/Concatenating 
+
+s1.append(s2) #rows of df2 go below df1. #Maintains indexes. Needs reset_index().
+
+pd.concat([s1, s2, s3]) #can concatenate vertical or horizontally. Can use ignore_index to avoid repeated indices. 
+                        #keys=[] creates multi-index
+                        #can specify join='inner'/'outer' (default)
+
