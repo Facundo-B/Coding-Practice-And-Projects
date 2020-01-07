@@ -1,0 +1,53 @@
+Conda packages can include data, images, notebooks, or other assets. The command-line tool conda is used to install, remove and examine packages.
+
+When you install any Conda package, any other packages needed get installed automatically.
+
+A Conda package, then, is a file containing all files needed to make a given program execute correctly on a given system. Moreover, a Conda package can contain binary artifacts specific to a particular platform or operating system.
+
+---> conda COMMAND OPTIONS --SWITCH <---
+
+conda install [package]
+
+Most Conda packages use a system called semantic versioning to identify distinct versions of a software package
+Under semantic versioning, software is labeled with a three-part version identifier of the form MAJOR.MINOR.PATCH; the label components are non-negative integers separated by periods. Assuming all software starts at version 0.0.0
+
+conda list [package/regex] [--name environment] --> lists all packages installed
+
+conda install [-c channel] [package]=14.3.2 --> can install specific Mayor/Minor/Patch (can be further customized)
+
+conda update [package]
+
+conda remove [package]
+
+conda search [package] [--info] --> searches for available versions.
+               [--channel] --> Searches by a specific user's channel.
+               [--override-channels] --> Prevents search on defacult channels.
+               [--platform] --> Specifies platform (current system is default)
+
+A Conda channel is an identifier of a path (e.g., as in a web address) from which Conda packages can be obtained. Although covering a wide swath, the main channel contains only packages that are (moderately) curated by Anaconda Inc.
+
+Although the conda command and its subcommands are used for nearly everything in this course, the package anaconda-client provides the command anaconda that searches in a different manner that is often more useful.
+
+anaconda search [package] --> searches across all channels and platforms
+
+The default channel on Anaconda Cloud is curated by Anaconda Inc., but another channel called conda-forge also has a special status. This channel does not operate any differently than other channels, whether those others are associated with an individual or organization, but it acts as a kind of "community curation" of relatively well-vetted packages.
+
+Conda environments allow multiple incompatible versions of the same (software) package to coexist on your system. An environment is simply a file path containing a collection of mutually compatible packages. By isolating distinct versions of a given package (and their dependencies) in distinct environments, those versions are all available to work on particular projects or tasks.
+
+When using conda, you are always in some environment, but it may be the default (called the base or root environment). Your current environment has a name and contains a collection of packages currently associated with that environment.
+
+conda env list
+
+The output of conda env list shows that each environment is associated with a particular directory. This is not the same as your current working directory for a given project; being "in" an environment is completely independent of the directory you are working in. Indeed, you often wish to preserve a certain Conda environment and edit resources across multiple project directories (all of which rely on the same environment). 
+
+conda activate [ENVNAME]
+
+conda deactivate --> returns to base env
+
+conda env remove [--name ENVNAME] --> remove environment
+
+conda create [--name ENVNAME] [packages...]
+
+conda env export [--name ENVNAME (default is current)] [--file fname. Extension .yml is conventional] 
+
+conda env create --file filename.yml --> creates env from .yml
